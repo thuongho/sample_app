@@ -7,7 +7,7 @@ describe "Static pages" do
   describe "Home page" do
     before { visit root_path }
 
-    it { should have_content('Sample App') }
+    # it { should have_content('Sample App') }
     it { should have_title(full_title('')) }
     it { should_not have_title('| Home') }
 
@@ -47,5 +47,12 @@ describe "Static pages" do
 
     it { should have_content('Contact') }
     it { should have_title(full_title('Contact')) }
+    it {should have_selector('h1.page-title')}
+    it {should have_selector('dl')}
+    it {should have_selector('dt')}
+    it {should have_selector('dd')}
+    it {should have_selector('section.main')}
+    it {should have_css('h1.page-title')}
+    it {should have_css('.main')}
   end
 end
